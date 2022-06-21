@@ -28,7 +28,9 @@ const Pomodoro = () => {
     }, 1000);
   }, [seconds]);
 
-  
+  const handleReset = () => {
+    window.location.reload()
+  }
 
   const timerMinutes = minutes < 10 ? `0${minutes}` : minutes;
   const timerSeconds = seconds < 10 ? `0${seconds}` : seconds;
@@ -41,6 +43,7 @@ const Pomodoro = () => {
       <div className="timer">
         {timerMinutes}:{timerSeconds}
       </div>
+        <button onClick={handleReset}>RESET</button>
     </div>
   );
 }

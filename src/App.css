@@ -25,12 +25,31 @@ body {
 
 .pomodoro {
   font-size: 6em;
-
-
 }
 
 .message {
   font-size: 0.5em;
   min-height: 1.3em;
   margin-bottom: 0.5em;
+}
+
+button{
+  font-family: "Roboto Mono", monospace;
+  display: flex;
+  color: black;
+  font-weight: 600;
+  background-color: #bde0fe;
+  flex-direction: column;
+  padding: 1rem 1.5rem;
+  border: 1px solid #bde0fe;
+  border-radius: 8px;
+  margin: auto;
+  margin-top: -4rem;
+  cursor: pointer;
+}
+
+button:hover{
+  background: transparent;
+  color: #bde0fe;
+  transition: 0.5s;
 }
