@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 
 const Pomodoro = () => {
-  const [minutes, setMinutes] = useState(1);
+  const [minutes, setMinutes] = useState(25);
   const [seconds, setSeconds] = useState(0);
   const [displayMessage, setDisplayMessage] = useState(false);
+
 
   useEffect(() => {
     let interval = setInterval(() => {
@@ -26,6 +27,8 @@ const Pomodoro = () => {
       }
     }, 1000);
   }, [seconds]);
+
+  
 
   const timerMinutes = minutes < 10 ? `0${minutes}` : minutes;
   const timerSeconds = seconds < 10 ? `0${seconds}` : seconds;

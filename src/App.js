@@ -6,13 +6,13 @@ import Footer from './components/Footer';
 
 const App = () => {
   return (
-    <Fragment>
+    <div>
       <Header />
-      <div className='App'>
-      <Pomodoro />
+      <div className='timer'>
+        <Pomodoro />
       </div>
       <Footer />
-    </Fragment>
+    </div>
   )
 }
 

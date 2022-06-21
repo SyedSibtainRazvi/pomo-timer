@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <main className='navbar'>
         <h1>PomoDoro</h1>
-        <p> Let's focus and be productive</p>
+        <p className='hide-mobile'> Let's focus and be productive</p>
     </main>
   )
 }

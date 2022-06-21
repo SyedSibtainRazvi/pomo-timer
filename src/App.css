@@ -1,11 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
 
 body {
-  background-image: url(../assets/bg-pomo.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url(../assets/bg-pomo.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   color: #bde0fe;
+  overflow: hidden;
   height: 100vh;
   font-family: "Roboto Mono", monospace;
 }
@@ -14,16 +15,17 @@ body {
   height: 100vh;
 }
 
-.App {
+.timer {
+  overflow-y: none;
   display: flex;
-  height: 50vh;
+  height: 40vh;
   justify-content: center;
   align-items: center;
 }
 
 .pomodoro {
   font-size: 6em;
-  
+
 
 }
 

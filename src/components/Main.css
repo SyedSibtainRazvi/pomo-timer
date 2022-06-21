@@ -1,6 +1,5 @@
 .navbar {
     display: flex;
-    flex-direction: row;
     justify-content: space-around;
     align-items: center;
     margin-bottom: 5rem;
@@ -12,9 +11,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 4rem;
-    line-height: 0%;
-    color: black;
-    font-weight: 800;
+    color: aliceblue;
+    font-weight: 400;
+    font-size: large;
+    margin: 2rem 2rem;
+}
 
+@media screen and (max-width: 720px) {
+    .footer {
+        font-size:medium;
+    }
+    .hide-mobile{
+        display: none;
+    }
 }
