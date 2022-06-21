@@ -1,8 +1,18 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+import Pomodoro from './components/Pomodoro';
+import "./App.css";
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 const App = () => {
   return (
-    <div>App</div>
+    <Fragment>
+      <Header />
+      <div className='App'>
+      <Pomodoro />
+      </div>
+      <Footer />
+    </Fragment>
   )
 }
 
