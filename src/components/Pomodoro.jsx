@@ -4,39 +4,36 @@ const Pomodoro = () => {
   const [minutes, setMinutes] = useState(1);
   const [seconds, setSeconds] = useState(0);
   const [displayMessage, setDisplayMessage] = useState(false);
-  const [cycle, setCycle] = useState(0)
-
-  const handleCycle = (e) => {
-    e.preventDefault()
-  }
+  const [cycle, setCycle] = useState(-2)
+  const [value, setValue] = useState('')
 
 
   useEffect(() => {
-    // let count = setCycle;
-    // let cycle = 0;
-
-    // if (count === cycle) {
-    //   return console.log("Hello")
-    // }
     let interval = setInterval(() => {
       clearInterval(interval);
 
       if (seconds === 0) {
         if (minutes !== 0) {
-          setSeconds(59);
+          setSeconds(9);
           setMinutes(minutes - 1);
         } else {
-          let minutes = displayMessage ? 24 : 4;
-          let seconds = 59;
-          // setCycle(cycle + 1);
-          // console.log(cycle)
-          
+          let minutes = displayMessage ? 0 : 1;
+          let seconds = 9;
+
+          setCycle(cycle + 1);
+          console.log(cycle);
+          console.log(value);
+
+          if (value.includes(cycle)) {
+            return function cleanup() {
+              clearInterval(interval)
+            }
+          }
 
           setSeconds(seconds);
           setMinutes(minutes);
           setDisplayMessage(!displayMessage);
-          
-          
+
         }
       } else {
         setSeconds(seconds - 1);
@@ -59,8 +56,12 @@ const Pomodoro = () => {
       <div className="timer">
         {timerMinutes}:{timerSeconds}
       </div>
-        <button onClick={handleReset}>RESET</button>
-        <input type="number" value={cycle} onChange={handleCycle}/>
+      <button onClick={handleReset}>RESET</button>
+      <input value={value}
+        pattern="[0-9]"
+        onChange={(e) =>
+          setValue((v) => (e.target.validity.valid ? e.target.value : v))
+        } />
     </div>
   );
 }
