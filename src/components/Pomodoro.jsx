@@ -15,6 +15,7 @@ const Pomodoro = () => {
       if (minutes === 0 && seconds === 0) {
         setCycle(cycle + 0.5)
         console.log(cycle)
+
       }
 
       if (seconds === 0) {
@@ -55,27 +56,28 @@ const Pomodoro = () => {
 
   return (
     <>
-    <div className="pomodoro">
-      <div className="message">
-        {displayMessage && <div>Break time! New session starts in:</div>}
+      <div className="pomodoro">
+        <div className="message">
+          {displayMessage && <div>Break time! New session starts in:</div>}
+        </div>
+        <div className="timer">
+          {timerMinutes}:{timerSeconds}
+        </div>
+
+        <div className="container">
+          <button onClick={handleReset}>RESET</button>
+          <input className="input-cycle"
+            value={value}
+            placeholder="Enter cycle value"
+            // pattern="[0-9]"
+            type="number"
+            onChange={(e) =>
+              setValue((v) => (e.target.validity.valid ? e.target.value : v))
+            } />
+        </div>
       </div>
-      <div className="timer">
-        {timerMinutes}:{timerSeconds}
-      </div>
-      
-      <div className="container">
-        <button onClick={handleReset}>RESET</button>
-        <input className="input-cycle"
-          value={value}
-          placeholder = "Enter cycle value"
-          pattern="[0-9]"
-          onChange={(e) =>
-            setValue((v) => (e.target.validity.valid ? e.target.value : v))
-          } />
-      </div>
-    </div>
     </>
-    
+
   );
 }
 
