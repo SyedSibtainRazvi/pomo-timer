@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 const Pomodoro = () => {
-  const [minutes, setMinutes] = useState(1);
+  const [minutes, setMinutes] = useState(25);
   const [seconds, setSeconds] = useState(0);
   const [displayMessage, setDisplayMessage] = useState(false);
   const [cycle, setCycle] = useState(0.5);
@@ -20,12 +20,12 @@ const Pomodoro = () => {
 
       if (seconds === 0) {
         if (minutes !== 0) {
-          setSeconds(9);
+          setSeconds(59);
           setMinutes(minutes - 1);
 
         } else {
-          let minutes = displayMessage ? 1 : 1;
-          let seconds = 9;
+          let minutes = displayMessage ? 24 : 4;
+          let seconds = 59;
           // console.log(cycle);
           // console.log(value);
 
