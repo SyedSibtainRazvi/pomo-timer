@@ -18,9 +18,10 @@ body {
 .timer {
   overflow-y: none;
   display: flex;
-  height: 40vh;
+  height: 50vh;
   justify-content: center;
   align-items: center;
+
 }
 
 .pomodoro {
@@ -28,23 +29,34 @@ body {
 }
 
 .message {
-  font-size: 0.5em;
-  min-height: 1.3em;
+  font-size: 0.4em;
+  min-height: 1.2em;
   margin-bottom: 0.5em;
+  margin: auto;
 }
 
 button{
   font-family: "Roboto Mono", monospace;
-  display: flex;
   color: black;
   font-weight: 600;
   background-color: #bde0fe;
-  flex-direction: column;
-  padding: 1rem 1.5rem;
+  padding: 1rem 1rem;
   border: 1px solid #bde0fe;
   border-radius: 8px;
   margin: auto;
-  margin-top: -4rem;
+  cursor: pointer;
+} 
+
+.input-cycle{
+  font-family: "Roboto Mono", monospace;
+  color: black;
+  font-weight: 600;
+  background-color: #bde0fe;
+  flex-direction: row;
+  padding: 1rem 1rem;
+  border: 1px solid #bde0fe;
+  border-radius: 8px;
+  margin: auto;
   cursor: pointer;
 }
 
@@ -52,4 +64,20 @@ button:hover{
   background: transparent;
   color: #bde0fe;
   transition: 0.5s;
+}
+
+.container{
+  display: flex;
+  width: 80vw;
+  align-items: center;
+  justify-content:space-evenly;
+}
+
+@media screen and (max-width: 720px) {
+  .container{
+    flex-direction: column;
+  }
+  .input-cycle{
+    margin-top: 1rem;
+  }
 }

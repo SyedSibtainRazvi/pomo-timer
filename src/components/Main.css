@@ -8,13 +8,15 @@
 }
 
 .footer {
+    background-color: aqua;
     display: flex;
     flex-direction: column;
     align-items: center;
     color: aliceblue;
     font-weight: 400;
+    width: 100vw;
     font-size: large;
-    margin: 4rem 2rem 0rem 2rem;
+    margin-top: 5rem;
 }
 
 @media screen and (max-width: 720px) {
